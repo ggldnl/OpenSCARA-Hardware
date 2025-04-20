@@ -1,9 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="URDF">
+
+    <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+    </material>
+
+    <material name="silver">
+        <color rgba="0.75 0.75 0.75 1.0"/>
+    </material>
+
+    <material name="gold">
+        <color rgba="1.0 0.843 0.0 1.0"/>
+    </material>
+
     <link name="base">
         <inertial>
             <origin xyz="0.00015122651304084374 -0.0031189903972328945 0.04444615249588057" rpy="0.0 0.0 0.0" />
-            <mass value="4.290391579347167" />
+            <mass value="100"/>
             <inertia ixx="0.010475179799747623" iyy="0.01011111532060361" izz="0.009773277269669556" ixy="-1.4675675020688755e-05" iyz="0.00023916465747799863" ixz="-3.676367466755517e-05" />
         </inertial>
         <visual name="base_visual">
@@ -11,6 +24,7 @@
             <geometry>
                 <mesh filename="CAD/base.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="base_collision">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
@@ -30,6 +44,7 @@
             <geometry>
                 <mesh filename="CAD/z_axis_mount.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="z_axis_mount_collision">
             <origin xyz="-0.02600000000000002 -0.027500000000000035 -1.7763568394002505e-17" rpy="-3.141592653589793 -8.673617379883935e-19 0.0" />
@@ -49,6 +64,7 @@
             <geometry>
                 <mesh filename="CAD/leadscrew.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="leadscrew_collision">
             <origin xyz="7.781535832362963e-17 4.4408920985006264e-17 0.1399999999999997" rpy="-9.413759555056153e-16 1.9959017602476978e-16 1.3877787807814558e-17" />
@@ -57,19 +73,20 @@
             </geometry>
         </collision>
     </link>
-    <link name="z_stepper">
+    <link name="l1_stepper">
         <inertial>
             <origin xyz="-0.015494022434730144 -0.015485213747267395 0.01954522526776273" rpy="0.0 -0.0 0.0" />
             <mass value="0.5336531870485284" />
             <inertia ixx="0.0001468942190243688" iyy="0.00014698482766301903" izz="0.00014346878090923498" ixy="-1.7053687028411382e-10" iyz="-7.402066846506732e-08" ixz="1.0643825587553933e-10" />
         </inertial>
-        <visual name="z_stepper_visual">
+        <visual name="l1_stepper_visual">
             <origin xyz="-0.015493999999999935 -0.015494000000000048 -7.105427357601002e-17" rpy="3.141592653589793 -1.5407439555097887e-33 -8.545538810376762e-50" />
             <geometry>
                 <mesh filename="CAD/stepper.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
-        <collision name="z_stepper_collision">
+        <collision name="l1_stepper_collision">
             <origin xyz="-0.015493999999999935 -0.015494000000000048 -7.105427357601002e-17" rpy="3.141592653589793 -1.5407439555097887e-33 -8.545538810376762e-50" />
             <geometry>
                 <mesh filename="CAD/stepper.stl" scale="0.001 0.001 0.001" />
@@ -87,6 +104,7 @@
             <geometry>
                 <mesh filename="CAD/coupler.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="coupler_collision">
             <origin xyz="7.781318991928466e-17 5.773159728050814e-17 0.0027000000000001203" rpy="-1.152564827459276e-15 -1.6907432184140867e-16 1.6452784996728192e-47" />
@@ -106,6 +124,7 @@
             <geometry>
                 <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="linear_rod_1_collision">
             <origin xyz="-8.526512829121202e-16 5.329070518200751e-17 -0.15000000000000005" rpy="-2.2588176397729135e-16 3.469184143700199e-18 9.353866652534959e-51" />
@@ -125,6 +144,7 @@
             <geometry>
                 <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="linear_rod_2_collision">
             <origin xyz="-1.3500311979441904e-15 0.0 -0.1499999999999998" rpy="-1.836970198721035e-16 2.1250099772462548e-17 -2.5067028365650373e-50" />
@@ -144,6 +164,7 @@
             <geometry>
                 <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="linear_rod_3_collision">
             <origin xyz="-1.0480505352461477e-15 -1.580957587066223e-15 -0.14999999999999994" rpy="-1.8912715711782494e-16 2.0816418903468226e-17 1.683802287865903e-49" />
@@ -163,6 +184,7 @@
             <geometry>
                 <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="linear_rod_4_collision">
             <origin xyz="2.771116669464391e-15 -1.4210854715202005e-15 -0.1500000000000001" rpy="-3.502304735658764e-16 1.1449148660621605e-16 -3.858753435262988e-49" />
@@ -182,6 +204,7 @@
             <geometry>
                 <mesh filename="CAD/anti_wobble.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="anti_wobble_collision">
             <origin xyz="-0.029999999999997244 -0.04100000000000142 -0.0020000000000001705" rpy="1.836970198721033e-16 4.930380657631325e-32 3.141592653589793" />
@@ -201,6 +224,7 @@
             <geometry>
                 <mesh filename="CAD/608_bearing.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="608_bearing_collision">
             <origin xyz="2.7755575615628914e-15 1.4632739464559563e-15 0.003500000000000156" rpy="-2.276161136010673e-16 -3.608224830031761e-16 2.4492935982947074e-16" />
@@ -220,6 +244,7 @@
             <geometry>
                 <mesh filename="CAD/l1_T8_nut.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="gold"/>
         </visual>
         <collision name="l1_T8_nut_collision">
             <origin xyz="0.00800000000000263 -1.6076029396572267e-15 3.552713678800501e-17" rpy="-3.141592653589793 6.421744201601272e-18 -7.395570986446987e-32" />
@@ -239,6 +264,7 @@
             <geometry>
                 <mesh filename="CAD/l1_platform_bottom.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="l1_platform_bottom_collision">
             <origin xyz="-0.029999999999997157 0.04100000000000129 0.0" rpy="2.839955395218839e-17 -6.4217442015989036e-18 2.4651903288156624e-32" />
@@ -258,6 +284,7 @@
             <geometry>
                 <mesh filename="CAD/l1_platform_top.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="l1_platform_top_collision">
             <origin xyz="0.031000000000001107 0.020000000000004032 0.0254999999999999" rpy="3.1415926535897922 -7.889724475210117e-18 -3.141592653589793" />
@@ -277,6 +304,7 @@
             <geometry>
                 <mesh filename="CAD/l2_top.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="l2_top_collision">
             <origin xyz="2.842170943040401e-15 -1.2789769243681803e-15 0.00599999597342423" rpy="-3.141592653589793 4.110069457302548e-17 -1.2431211281837966e-15" />
@@ -296,6 +324,7 @@
             <geometry>
                 <mesh filename="CAD/l2_bottom.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="l2_bottom_collision">
             <origin xyz="-0.0899999999999972 -0.023999999999998724 -0.031999995973425364" rpy="2.8399553952191537e-17 -1.31066773475825e-16 1.2431211281837968e-15" />
@@ -315,6 +344,7 @@
             <geometry>
                 <mesh filename="CAD/51105_bearing.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="l2_51105_bearing_collision">
             <origin xyz="0.004104820587147202 -0.0025223334871125403 0.0025905664427120457" rpy="-3.1415926535897927 -5.1714970230890255e-19 -4.930380657631324e-32" />
@@ -334,6 +364,7 @@
             <geometry>
                 <mesh filename="CAD/stepper.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="l2_stepper_collision">
             <origin xyz="0.015494000000153458 -0.017993999999935763 0.0" rpy="3.1415926535897922 6.987504925707166e-17 -3.141592653589793" />
@@ -353,6 +384,7 @@
             <geometry>
                 <mesh filename="CAD/l3_top.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="l3_top_collision">
             <origin xyz="4.884981308350689e-15 1.4210854715202005e-15 -0.006000001946849701" rpy="-2.839955395218903e-17 2.378155083282479e-16 -3.1415926535897922" />
@@ -372,6 +404,7 @@
             <geometry>
                 <mesh filename="CAD/l3_bottom.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="l3_bottom_collision">
             <origin xyz="0.09000000000000492 0.024000000000001426 -0.032000001946849696" rpy="-1.958679305216033e-16 8.36792821915997e-16 -3.1415926535897922" />
@@ -391,6 +424,7 @@
             <geometry>
                 <mesh filename="CAD/51105_bearing.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="l3_51105_bearing_collision">
             <origin xyz="0.002522333487116164 0.004104820587145888 -0.008406195504137647" rpy="3.141592653589793 -2.839955395219168e-17 1.5707963267948972" />
@@ -410,6 +444,7 @@
             <geometry>
                 <mesh filename="CAD/stepper_pancake.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="l3_stepper_collision">
             <origin xyz="0.03850000000000449 -0.036500000000002426 0.01489075848070252" rpy="1.5707963267948966 -8.684957865380149e-16 1.5707963267948974" />
@@ -429,6 +464,7 @@
             <geometry>
                 <mesh filename="CAD/51105_bearing.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="silver"/>
         </visual>
         <collision name="ee_51105_bearing_collision">
             <origin xyz="-0.0025223334871063586 -0.00410482058714571 0.002590568389561838" rpy="3.141592653589793 2.8399553952176776e-17 -1.570796326794898" />
@@ -448,6 +484,7 @@
             <geometry>
                 <mesh filename="CAD/ee_mount.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="ee_mount_collision">
             <origin xyz="4.938272013532697e-15 -1.2789769243681803e-15 0.005999997920274148" rpy="-3.141592653589793 6.5995716475792784e-18 -1.367370697150656e-15" />
@@ -467,6 +504,7 @@
             <geometry>
                 <mesh filename="CAD/stepper_pancake.stl" scale="0.001 0.001 0.001" />
             </geometry>
+        <material name="black"/>
         </visual>
         <collision name="ee_stepper_collision">
             <origin xyz="0.037499999999992484 -0.036500000000001975 0.014890756400976405" rpy="1.5707963267948977 -8.684957865380168e-16 1.570796326794896" />
@@ -490,7 +528,7 @@
     <joint name="z_axis_mount_Rigido-4" type="fixed">
         <origin xyz="-0.0105 0.0075 0.0" rpy="0.0 -0.0 0.0" />
         <parent link="z_axis_mount" />
-        <child link="z_stepper" />
+        <child link="l1_stepper" />
     </joint>
     <joint name="coupler_Rigido-5" type="fixed">
         <origin xyz="0.0 0.0 0.015399999999999992" rpy="-1.232595164407831e-32 2.465190328815662e-32 2.1271369958606197e-63" />
@@ -522,9 +560,9 @@
         <parent link="l1_platform_bottom" />
         <child link="l1_T8_nut" />
     </joint>
-    <joint name="z_stepper_Rigido-13" type="fixed">
+    <joint name="l1_stepper_Rigido-13" type="fixed">
         <origin xyz="-0.015494 -0.015494 -0.024000000000000004" rpy="-3.141592653589793 -0.0 1.298208104246751e-67" />
-        <parent link="z_stepper" />
+        <parent link="l1_stepper" />
         <child link="coupler" />
     </joint>
     <joint name="l1_platform_bottom_Rigido-14" type="fixed">
