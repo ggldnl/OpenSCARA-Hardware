@@ -1,0 +1,606 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="URDF">
+    <link name="base">
+        <inertial>
+            <origin xyz="0.00015122651304084374 -0.0031189903972328945 0.04444615249588057" rpy="0.0 0.0 0.0" />
+            <mass value="4.290391579347167" />
+            <inertia ixx="0.010475179799747623" iyy="0.01011111532060361" izz="0.009773277269669556" ixy="-1.4675675020688755e-05" iyz="0.00023916465747799863" ixz="-3.676367466755517e-05" />
+        </inertial>
+        <visual name="base_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="CAD/base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="base_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="CAD/base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="z_axis_mount">
+        <inertial>
+            <origin xyz="-0.025336281060581275 -0.026473424084121407 -0.019149167134302817" rpy="0.0 -0.0 0.0" />
+            <mass value="1.219346825267376" />
+            <inertia ixx="0.0016285382162475291" iyy="0.0012017263657605887" izz="0.0023628340659233235" ixy="-1.6015951104122795e-05" iyz="5.947666844051728e-07" ixz="7.251262544824303e-06" />
+        </inertial>
+        <visual name="z_axis_mount_visual">
+            <origin xyz="-0.02600000000000002 -0.027500000000000035 -1.7763568394002505e-17" rpy="-3.141592653589793 -8.673617379883935e-19 0.0" />
+            <geometry>
+                <mesh filename="CAD/z_axis_mount.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="z_axis_mount_collision">
+            <origin xyz="-0.02600000000000002 -0.027500000000000035 -1.7763568394002505e-17" rpy="-3.141592653589793 -8.673617379883935e-19 0.0" />
+            <geometry>
+                <mesh filename="CAD/z_axis_mount.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="leadscrew">
+        <inertial>
+            <origin xyz="-5.999999999999999e-06 0.019506 -0.1504" rpy="0.0 -0.0 -2.9545531576914354e-126" />
+            <mass value="0.0" />
+            <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0" />
+        </inertial>
+        <visual name="leadscrew_visual">
+            <origin xyz="7.781535832362963e-17 4.4408920985006264e-17 0.1399999999999997" rpy="-9.413759555056153e-16 1.9959017602476978e-16 1.3877787807814558e-17" />
+            <geometry>
+                <mesh filename="CAD/leadscrew.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="leadscrew_collision">
+            <origin xyz="7.781535832362963e-17 4.4408920985006264e-17 0.1399999999999997" rpy="-9.413759555056153e-16 1.9959017602476978e-16 1.3877787807814558e-17" />
+            <geometry>
+                <mesh filename="CAD/leadscrew.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="z_stepper">
+        <inertial>
+            <origin xyz="-0.015494022434730144 -0.015485213747267395 0.01954522526776273" rpy="0.0 -0.0 0.0" />
+            <mass value="0.5336531870485284" />
+            <inertia ixx="0.0001468942190243688" iyy="0.00014698482766301903" izz="0.00014346878090923498" ixy="-1.7053687028411382e-10" iyz="-7.402066846506732e-08" ixz="1.0643825587553933e-10" />
+        </inertial>
+        <visual name="z_stepper_visual">
+            <origin xyz="-0.015493999999999935 -0.015494000000000048 -7.105427357601002e-17" rpy="3.141592653589793 -1.5407439555097887e-33 -8.545538810376762e-50" />
+            <geometry>
+                <mesh filename="CAD/stepper.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="z_stepper_collision">
+            <origin xyz="-0.015493999999999935 -0.015494000000000048 -7.105427357601002e-17" rpy="3.141592653589793 -1.5407439555097887e-33 -8.545538810376762e-50" />
+            <geometry>
+                <mesh filename="CAD/stepper.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="coupler">
+        <inertial>
+            <origin xyz="-6.0879296473515345e-05 -3.517362488584697e-05 0.0027015645586280002" rpy="0.0 -0.0 0.0" />
+            <mass value="0.04565801068487404" />
+            <inertia ixx="3.796623903145756e-06" iyy="3.7975045946769597e-06" izz="2.255440706187826e-06" ixy="-8.521065824730197e-10" iyz="-1.4188305613943922e-11" ixz="-3.6910717260200724e-11" />
+        </inertial>
+        <visual name="coupler_visual">
+            <origin xyz="7.781318991928466e-17 5.773159728050814e-17 0.0027000000000001203" rpy="-1.152564827459276e-15 -1.6907432184140867e-16 1.6452784996728192e-47" />
+            <geometry>
+                <mesh filename="CAD/coupler.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="coupler_collision">
+            <origin xyz="7.781318991928466e-17 5.773159728050814e-17 0.0027000000000001203" rpy="-1.152564827459276e-15 -1.6907432184140867e-16 1.6452784996728192e-47" />
+            <geometry>
+                <mesh filename="CAD/coupler.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="linear_rod_1">
+        <inertial>
+            <origin xyz="-1.4005954844797942e-08 -5.102991122996059e-09 -0.15077924038070736" rpy="0.0 -0.0 0.0" />
+            <mass value="0.11772565265799409" />
+            <inertia ixx="0.0008743378388290316" iyy="0.0008743378381567152" izz="9.456474786703685e-07" ixy="-3.941504783146199e-13" iyz="7.900225417432905e-11" ixz="2.372042150373954e-10" />
+        </inertial>
+        <visual name="linear_rod_1_visual">
+            <origin xyz="-8.526512829121202e-16 5.329070518200751e-17 -0.15000000000000005" rpy="-2.2588176397729135e-16 3.469184143700199e-18 9.353866652534959e-51" />
+            <geometry>
+                <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="linear_rod_1_collision">
+            <origin xyz="-8.526512829121202e-16 5.329070518200751e-17 -0.15000000000000005" rpy="-2.2588176397729135e-16 3.469184143700199e-18 9.353866652534959e-51" />
+            <geometry>
+                <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="linear_rod_2">
+        <inertial>
+            <origin xyz="-1.4005955342177856e-08 -5.102991176286764e-09 -0.1507792403807071" rpy="0.0 -0.0 0.0" />
+            <mass value="0.11772565265799409" />
+            <inertia ixx="0.0008743378388290281" iyy="0.0008743378381567187" izz="9.456474786704227e-07" ixy="-3.94149963318588e-13" iyz="7.900225417432905e-11" ixz="2.37204214820555e-10" />
+        </inertial>
+        <visual name="linear_rod_2_visual">
+            <origin xyz="-1.3500311979441904e-15 0.0 -0.1499999999999998" rpy="-1.836970198721035e-16 2.1250099772462548e-17 -2.5067028365650373e-50" />
+            <geometry>
+                <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="linear_rod_2_collision">
+            <origin xyz="-1.3500311979441904e-15 0.0 -0.1499999999999998" rpy="-1.836970198721035e-16 2.1250099772462548e-17 -2.5067028365650373e-50" />
+            <geometry>
+                <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="linear_rod_3">
+        <inertial>
+            <origin xyz="-1.4005955040197193e-08 -5.1029927572443515e-09 -0.15077924038070725" rpy="0.0 -0.0 0.0" />
+            <mass value="0.11772565265799409" />
+            <inertia ixx="0.0008743378388290351" iyy="0.0008743378381567152" izz="9.456474786704769e-07" ixy="-3.9415053252472854e-13" iyz="7.900225395748861e-11" ixz="2.37204214820555e-10" />
+        </inertial>
+        <visual name="linear_rod_3_visual">
+            <origin xyz="-1.0480505352461477e-15 -1.580957587066223e-15 -0.14999999999999994" rpy="-1.8912715711782494e-16 2.0816418903468226e-17 1.683802287865903e-49" />
+            <geometry>
+                <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="linear_rod_3_collision">
+            <origin xyz="-1.0480505352461477e-15 -1.580957587066223e-15 -0.14999999999999994" rpy="-1.8912715711782494e-16 2.0816418903468226e-17 1.683802287865903e-49" />
+            <geometry>
+                <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="linear_rod_4">
+        <inertial>
+            <origin xyz="-1.400595122102999e-08 -5.102992597372235e-09 -0.1507792403807074" rpy="0.0 -0.0 0.0" />
+            <mass value="0.11772565265799409" />
+            <inertia ixx="0.0008743378388290299" iyy="0.000874337838156717" izz="9.456474786704227e-07" ixy="-3.941493670073931e-13" iyz="7.900225417432905e-11" ixz="2.37204214820555e-10" />
+        </inertial>
+        <visual name="linear_rod_4_visual">
+            <origin xyz="2.771116669464391e-15 -1.4210854715202005e-15 -0.1500000000000001" rpy="-3.502304735658764e-16 1.1449148660621605e-16 -3.858753435262988e-49" />
+            <geometry>
+                <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="linear_rod_4_collision">
+            <origin xyz="2.771116669464391e-15 -1.4210854715202005e-15 -0.1500000000000001" rpy="-3.502304735658764e-16 1.1449148660621605e-16 -3.858753435262988e-49" />
+            <geometry>
+                <mesh filename="CAD/linear_rod.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="anti_wobble">
+        <inertial>
+            <origin xyz="-0.0299999999999537 -0.04197030544660553 0.00498992236379145" rpy="0.0 -0.0 0.0" />
+            <mass value="0.799924874759774" />
+            <inertia ixx="0.0006794167067440959" iyy="0.00043064841533596576" izz="0.0010837228293559054" ixy="-5.464466420653419e-16" iyz="-2.2300968817722281e-07" ixz="-9.043433446657953e-18" />
+        </inertial>
+        <visual name="anti_wobble_visual">
+            <origin xyz="-0.029999999999997244 -0.04100000000000142 -0.0020000000000001705" rpy="1.836970198721033e-16 4.930380657631325e-32 3.141592653589793" />
+            <geometry>
+                <mesh filename="CAD/anti_wobble.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="anti_wobble_collision">
+            <origin xyz="-0.029999999999997244 -0.04100000000000142 -0.0020000000000001705" rpy="1.836970198721033e-16 4.930380657631325e-32 3.141592653589793" />
+            <geometry>
+                <mesh filename="CAD/anti_wobble.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="608_bearing">
+        <inertial>
+            <origin xyz="-3.2176178499046425e-12 -1.9654243010869266e-09 0.003500003027095815" rpy="0.0 -0.0 0.0" />
+            <mass value="0.013900133524705328" />
+            <inertia ixx="5.548892553991838e-07" iyy="5.548896663109398e-07" izz="9.919660080577528e-07" ixy="1.008781534295795e-15" iyz="-9.18780839170158e-14" ixz="-7.285394316173068e-16" />
+        </inertial>
+        <visual name="608_bearing_visual">
+            <origin xyz="2.7755575615628914e-15 1.4632739464559563e-15 0.003500000000000156" rpy="-2.276161136010673e-16 -3.608224830031761e-16 2.4492935982947074e-16" />
+            <geometry>
+                <mesh filename="CAD/608_bearing.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="608_bearing_collision">
+            <origin xyz="2.7755575615628914e-15 1.4632739464559563e-15 0.003500000000000156" rpy="-2.276161136010673e-16 -3.608224830031761e-16 2.4492935982947074e-16" />
+            <geometry>
+                <mesh filename="CAD/608_bearing.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l1_T8_nut">
+        <inertial>
+            <origin xyz="0.007999999999984825 -1.7164047960704921e-15 -0.00029882999044883007" rpy="6.842277657836021e-49 -0.0 0.0" />
+            <mass value="0.01084464903489282" />
+            <inertia ixx="4.263484991595829e-07" iyy="4.2634849895049453e-07" izz="6.111635267785988e-07" ixy="-2.3378690323070968e-21" iyz="-6.776263578034402e-21" ixz="-2.8161460385793537e-19" />
+        </inertial>
+        <visual name="l1_T8_nut_visual">
+            <origin xyz="0.00800000000000263 -1.6076029396572267e-15 3.552713678800501e-17" rpy="-3.141592653589793 6.421744201601272e-18 -7.395570986446987e-32" />
+            <geometry>
+                <mesh filename="CAD/l1_T8_nut.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l1_T8_nut_collision">
+            <origin xyz="0.00800000000000263 -1.6076029396572267e-15 3.552713678800501e-17" rpy="-3.141592653589793 6.421744201601272e-18 -7.395570986446987e-32" />
+            <geometry>
+                <mesh filename="CAD/l1_T8_nut.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l1_platform_bottom">
+        <inertial>
+            <origin xyz="-0.029957080855250857 0.02648210886087121 0.00926514206259153" rpy="0.0 -0.0 0.0" />
+            <mass value="0.7452016325179142" />
+            <inertia ixx="0.0012422421567535244" iyy="0.0005644712058867594" izz="0.0017291317719342408" ixy="2.047971454006045e-06" iyz="-1.591982167226764e-05" ixz="3.310289600870783e-07" />
+        </inertial>
+        <visual name="l1_platform_bottom_visual">
+            <origin xyz="-0.029999999999997157 0.04100000000000129 0.0" rpy="2.839955395218839e-17 -6.4217442015989036e-18 2.4651903288156624e-32" />
+            <geometry>
+                <mesh filename="CAD/l1_platform_bottom.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l1_platform_bottom_collision">
+            <origin xyz="-0.029999999999997157 0.04100000000000129 0.0" rpy="2.839955395218839e-17 -6.4217442015989036e-18 2.4651903288156624e-32" />
+            <geometry>
+                <mesh filename="CAD/l1_platform_bottom.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l1_platform_top">
+        <inertial>
+            <origin xyz="0.031029535563690255 0.001758540865193048 0.016290692907798422" rpy="6.842277657836021e-49 -0.0 0.0" />
+            <mass value="0.9185401166832554" />
+            <inertia ixx="0.0018035682766356915" iyy="0.00062467698553037" izz="0.0023268483499385736" ixy="-4.948834918100276e-07" iyz="3.035628698007473e-05" ixz="-2.3764817303400686e-08" />
+        </inertial>
+        <visual name="l1_platform_top_visual">
+            <origin xyz="0.031000000000001107 0.020000000000004032 0.0254999999999999" rpy="3.1415926535897922 -7.889724475210117e-18 -3.141592653589793" />
+            <geometry>
+                <mesh filename="CAD/l1_platform_top.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l1_platform_top_collision">
+            <origin xyz="0.031000000000001107 0.020000000000004032 0.0254999999999999" rpy="3.1415926535897922 -7.889724475210117e-18 -3.141592653589793" />
+            <geometry>
+                <mesh filename="CAD/l1_platform_top.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l2_top">
+        <inertial>
+            <origin xyz="0.05598616840379046 0.00041399715062086174 0.002248359843700012" rpy="0.0 -0.0 0.0" />
+            <mass value="0.39774050953148316" />
+            <inertia ixx="9.884949686604465e-05" iyy="0.0010362392305255236" izz="0.0011283434495333033" ixy="3.7290956979288067e-06" iyz="4.154537376456838e-07" ixz="-1.6442871052812537e-05" />
+        </inertial>
+        <visual name="l2_top_visual">
+            <origin xyz="2.842170943040401e-15 -1.2789769243681803e-15 0.00599999597342423" rpy="-3.141592653589793 4.110069457302548e-17 -1.2431211281837966e-15" />
+            <geometry>
+                <mesh filename="CAD/l2_top.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l2_top_collision">
+            <origin xyz="2.842170943040401e-15 -1.2789769243681803e-15 0.00599999597342423" rpy="-3.141592653589793 4.110069457302548e-17 -1.2431211281837966e-15" />
+            <geometry>
+                <mesh filename="CAD/l2_top.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l2_bottom">
+        <inertial>
+            <origin xyz="-0.030915263941200682 -0.024227713888831454 -0.019577304943785182" rpy="0.0 -0.0 0.0" />
+            <mass value="0.4458114698520535" />
+            <inertia ixx="0.0002476349439185094" iyy="0.0013243130880477658" izz="0.0014812542111556559" ixy="-1.2853213770839741e-06" iyz="1.7482199829010198e-07" ixz="9.346483214642265e-06" />
+        </inertial>
+        <visual name="l2_bottom_visual">
+            <origin xyz="-0.0899999999999972 -0.023999999999998724 -0.031999995973425364" rpy="2.8399553952191537e-17 -1.31066773475825e-16 1.2431211281837968e-15" />
+            <geometry>
+                <mesh filename="CAD/l2_bottom.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l2_bottom_collision">
+            <origin xyz="-0.0899999999999972 -0.023999999999998724 -0.031999995973425364" rpy="2.8399553952191537e-17 -1.31066773475825e-16 1.2431211281837968e-15" />
+            <geometry>
+                <mesh filename="CAD/l2_bottom.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l2_51105_bearing">
+        <inertial>
+            <origin xyz="-8.57312705160318e-09 6.929187890136746e-11 0.005498380838743913" rpy="6.842277657836021e-49 -0.0 0.0" />
+            <mass value="0.06452999288266215" />
+            <inertia ixx="1.0782478912318632e-05" iyy="1.0782489776737155e-05" izz="2.0179914156482227e-05" ixy="1.324252457637594e-11" iyz="-1.1416231458435953e-12" ixz="-1.006611104868297e-12" />
+        </inertial>
+        <visual name="l2_51105_bearing_visual">
+            <origin xyz="0.004104820587147202 -0.0025223334871125403 0.0025905664427120457" rpy="-3.1415926535897927 -5.1714970230890255e-19 -4.930380657631324e-32" />
+            <geometry>
+                <mesh filename="CAD/51105_bearing.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l2_51105_bearing_collision">
+            <origin xyz="0.004104820587147202 -0.0025223334871125403 0.0025905664427120457" rpy="-3.1415926535897927 -5.1714970230890255e-19 -4.930380657631324e-32" />
+            <geometry>
+                <mesh filename="CAD/51105_bearing.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l2_stepper">
+        <inertial>
+            <origin xyz="0.015494022434883663 -0.01800278625266842 0.01954522526776284" rpy="6.842277657836021e-49 -0.0 0.0" />
+            <mass value="0.5336531870485284" />
+            <inertia ixx="0.00014689421902436788" iyy="0.00014698482766301724" izz="0.00014346878090923523" ixy="-1.7053687031880903e-10" iyz="7.402066846571782e-08" ixz="-1.0643825593541396e-10" />
+        </inertial>
+        <visual name="l2_stepper_visual">
+            <origin xyz="0.015494000000153458 -0.017993999999935763 0.0" rpy="3.1415926535897922 6.987504925707166e-17 -3.141592653589793" />
+            <geometry>
+                <mesh filename="CAD/stepper.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l2_stepper_collision">
+            <origin xyz="0.015494000000153458 -0.017993999999935763 0.0" rpy="3.1415926535897922 6.987504925707166e-17 -3.141592653589793" />
+            <geometry>
+                <mesh filename="CAD/stepper.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l3_top">
+        <inertial>
+            <origin xyz="-0.05033034580692551 -5.738331588531764e-05 -0.002192122308806859" rpy="0.0 -0.0 0.0" />
+            <mass value="0.3401437922153019" />
+            <inertia ixx="9.293547026942642e-05" iyy="0.0009423968227493815" izz="0.0010291887990210992" ixy="4.214715225570173e-06" iyz="4.0443104091375526e-09" ixz="-1.4046748482375235e-05" />
+        </inertial>
+        <visual name="l3_top_visual">
+            <origin xyz="4.884981308350689e-15 1.4210854715202005e-15 -0.006000001946849701" rpy="-2.839955395218903e-17 2.378155083282479e-16 -3.1415926535897922" />
+            <geometry>
+                <mesh filename="CAD/l3_top.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l3_top_collision">
+            <origin xyz="4.884981308350689e-15 1.4210854715202005e-15 -0.006000001946849701" rpy="-2.839955395218903e-17 2.378155083282479e-16 -3.1415926535897922" />
+            <geometry>
+                <mesh filename="CAD/l3_top.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l3_bottom">
+        <inertial>
+            <origin xyz="0.033193835323998305 0.024299619596403296 -0.020231699915423382" rpy="0.0 -0.0 0.0" />
+            <mass value="0.47409870902458456" />
+            <inertia ixx="0.0002530796169601616" iyy="0.0013751644633297174" izz="0.0015311102721777122" ixy="1.029375720069687e-06" iyz="1.7493885849000426e-07" ixz="1.7541257759019248e-06" />
+        </inertial>
+        <visual name="l3_bottom_visual">
+            <origin xyz="0.09000000000000492 0.024000000000001426 -0.032000001946849696" rpy="-1.958679305216033e-16 8.36792821915997e-16 -3.1415926535897922" />
+            <geometry>
+                <mesh filename="CAD/l3_bottom.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l3_bottom_collision">
+            <origin xyz="0.09000000000000492 0.024000000000001426 -0.032000001946849696" rpy="-1.958679305216033e-16 8.36792821915997e-16 -3.1415926535897922" />
+            <geometry>
+                <mesh filename="CAD/l3_bottom.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l3_51105_bearing">
+        <inertial>
+            <origin xyz="-6.928829066055187e-11 -8.573128447153521e-09 -0.00549838110810569" rpy="0.0 -0.0 0.0" />
+            <mass value="0.06452999288266215" />
+            <inertia ixx="1.0782489776738242e-05" iyy="1.0782478912319503e-05" izz="2.0179914156483745e-05" ixy="-1.3242524481496543e-11" iyz="-1.0066109187509276e-12" ixz="1.1416232542638127e-12" />
+        </inertial>
+        <visual name="l3_51105_bearing_visual">
+            <origin xyz="0.002522333487116164 0.004104820587145888 -0.008406195504137647" rpy="3.141592653589793 -2.839955395219168e-17 1.5707963267948972" />
+            <geometry>
+                <mesh filename="CAD/51105_bearing.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l3_51105_bearing_collision">
+            <origin xyz="0.002522333487116164 0.004104820587145888 -0.008406195504137647" rpy="3.141592653589793 -2.839955395219168e-17 1.5707963267948972" />
+            <geometry>
+                <mesh filename="CAD/51105_bearing.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="l3_stepper">
+        <inertial>
+            <origin xyz="0.01750000312485419 -0.01554669066310379 0.009868508563092142" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27994326563900734" />
+            <inertia ixx="4.888679289550939e-05" iyy="4.913290235489254e-05" izz="7.574834846792817e-05" ixy="-1.7934243499995173e-13" iyz="8.733043119213413e-08" ixz="-4.5701823402077846e-12" />
+        </inertial>
+        <visual name="l3_stepper_visual">
+            <origin xyz="0.03850000000000449 -0.036500000000002426 0.01489075848070252" rpy="1.5707963267948966 -8.684957865380149e-16 1.5707963267948974" />
+            <geometry>
+                <mesh filename="CAD/stepper_pancake.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="l3_stepper_collision">
+            <origin xyz="0.03850000000000449 -0.036500000000002426 0.01489075848070252" rpy="1.5707963267948966 -8.684957865380149e-16 1.5707963267948974" />
+            <geometry>
+                <mesh filename="CAD/stepper_pancake.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="ee_51105_bearing">
+        <inertial>
+            <origin xyz="6.929811058320468e-11 8.573128607025638e-09 0.005498382785593794" rpy="0.0 -0.0 0.0" />
+            <mass value="0.06452999288266215" />
+            <inertia ixx="1.0782489776737592e-05" iyy="1.0782478912319123e-05" izz="2.0179914156483582e-05" ixy="-1.3242524575178157e-11" iyz="1.0066110813812534e-12" ixz="-1.1416231596290962e-12" />
+        </inertial>
+        <visual name="ee_51105_bearing_visual">
+            <origin xyz="-0.0025223334871063586 -0.00410482058714571 0.002590568389561838" rpy="3.141592653589793 2.8399553952176776e-17 -1.570796326794898" />
+            <geometry>
+                <mesh filename="CAD/51105_bearing.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="ee_51105_bearing_collision">
+            <origin xyz="-0.0025223334871063586 -0.00410482058714571 0.002590568389561838" rpy="3.141592653589793 2.8399553952176776e-17 -1.570796326794898" />
+            <geometry>
+                <mesh filename="CAD/51105_bearing.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="ee_mount">
+        <inertial>
+            <origin xyz="7.068796091756145e-05 6.293203778788836e-06 0.000638562145002437" rpy="0.0 -0.0 -4.125432310736003e-113" />
+            <mass value="0.11698008918556412" />
+            <inertia ixx="2.0315798583277114e-05" iyy="2.050713994840677e-05" izz="3.694365287956877e-05" ixy="-1.716558959097301e-08" iyz="4.1509956141328776e-09" ixz="4.81970170651092e-08" />
+        </inertial>
+        <visual name="ee_mount_visual">
+            <origin xyz="4.938272013532697e-15 -1.2789769243681803e-15 0.005999997920274148" rpy="-3.141592653589793 6.5995716475792784e-18 -1.367370697150656e-15" />
+            <geometry>
+                <mesh filename="CAD/ee_mount.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="ee_mount_collision">
+            <origin xyz="4.938272013532697e-15 -1.2789769243681803e-15 0.005999997920274148" rpy="-3.141592653589793 6.5995716475792784e-18 -1.367370697150656e-15" />
+            <geometry>
+                <mesh filename="CAD/ee_mount.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="ee_stepper">
+        <inertial>
+            <origin xyz="0.016500003124842236 -0.015546690663103312 0.00986850648336607" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27994326563900734" />
+            <inertia ixx="4.8886792895508086e-05" iyy="4.913290235488885e-05" izz="7.574834846792557e-05" ixy="-1.7934265184038622e-13" iyz="8.733043119126677e-08" ixz="-4.570181798106698e-12" />
+        </inertial>
+        <visual name="ee_stepper_visual">
+            <origin xyz="0.037499999999992484 -0.036500000000001975 0.014890756400976405" rpy="1.5707963267948977 -8.684957865380168e-16 1.570796326794896" />
+            <geometry>
+                <mesh filename="CAD/stepper_pancake.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="ee_stepper_collision">
+            <origin xyz="0.037499999999992484 -0.036500000000001975 0.014890756400976405" rpy="1.5707963267948977 -8.684957865380168e-16 1.570796326794896" />
+            <geometry>
+                <mesh filename="CAD/stepper_pancake.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+        <joint name="z_axis_mount_Scorrimento-31" type="prismatic">
+        <origin xyz="0.003999999999999999 0.013499999999999996 -0.046" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="z_axis_mount" />
+        <child link="l1_platform_bottom" />
+        <axis xyz="0.0 0.0 1.0" />
+        <limit lower="0.0" upper="0.18" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="base_Rigido-3" type="fixed">
+        <origin xyz="0.026000000000000002 -0.0275 0.111" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="base" />
+        <child link="z_axis_mount" />
+    </joint>
+    <joint name="z_axis_mount_Rigido-4" type="fixed">
+        <origin xyz="-0.0105 0.0075 0.0" rpy="0.0 -0.0 0.0" />
+        <parent link="z_axis_mount" />
+        <child link="z_stepper" />
+    </joint>
+    <joint name="coupler_Rigido-5" type="fixed">
+        <origin xyz="0.0 0.0 0.015399999999999992" rpy="-1.232595164407831e-32 2.465190328815662e-32 2.1271369958606197e-63" />
+        <parent link="coupler" />
+        <child link="leadscrew" />
+    </joint>
+    <joint name="z_axis_mount_Rigido-7" type="fixed">
+        <origin xyz="-0.055999999999999994 0.013499999999999996 -0.03" rpy="0.0 -0.0 0.0" />
+        <parent link="z_axis_mount" />
+        <child link="linear_rod_1" />
+    </joint>
+    <joint name="z_axis_mount_Rigido-8" type="fixed">
+        <origin xyz="-0.055999999999999994 -0.06849999999999999 -0.03" rpy="0.0 -0.0 0.0" />
+        <parent link="z_axis_mount" />
+        <child link="linear_rod_2" />
+    </joint>
+    <joint name="z_axis_mount_Rigido-9" type="fixed">
+        <origin xyz="0.003999999999999999 -0.06849999999999999 -0.03" rpy="0.0 -0.0 0.0" />
+        <parent link="z_axis_mount" />
+        <child link="linear_rod_3" />
+    </joint>
+    <joint name="z_axis_mount_Rigido-10" type="fixed">
+        <origin xyz="0.003999999999999999 0.013499999999999996 -0.03" rpy="0.0 -0.0 0.0" />
+        <parent link="z_axis_mount" />
+        <child link="linear_rod_4" />
+    </joint>
+    <joint name="l1_platform_bottom_Rigido-11" type="fixed">
+        <origin xyz="-0.038 0.021499999999999995 0.006000000000000014" rpy="-3.141592653589793 -0.0 -3.575378658000282e-49" />
+        <parent link="l1_platform_bottom" />
+        <child link="l1_T8_nut" />
+    </joint>
+    <joint name="z_stepper_Rigido-13" type="fixed">
+        <origin xyz="-0.015494 -0.015494 -0.024000000000000004" rpy="-3.141592653589793 -0.0 1.298208104246751e-67" />
+        <parent link="z_stepper" />
+        <child link="coupler" />
+    </joint>
+    <joint name="l1_platform_bottom_Rigido-14" type="fixed">
+        <origin xyz="-0.061 0.020999999999999998 0.02400000000000002" rpy="6.162975822039155e-33 -0.0 -3.575378658000282e-49" />
+        <parent link="l1_platform_bottom" />
+        <child link="l1_platform_top" />
+    </joint>
+    <joint name="linear_rod_4_Rigido-15" type="fixed">
+        <origin xyz="0.0 0.0 -0.3" rpy="9.860761315262648e-32 -0.0 0.0" />
+        <parent link="linear_rod_4" />
+        <child link="anti_wobble" />
+    </joint>
+    <joint name="l1_platform_bottom_Rigido-17" type="fixed">
+        <origin xyz="-0.03 -0.03900000000000001 0.0010000000000000143" rpy="-3.141592653589793 -0.0 -3.575378658000282e-49" />
+        <parent link="l1_platform_bottom" />
+        <child link="l2_51105_bearing" />
+    </joint>
+    <joint name="l2_51105_bearing_Rivoluzione-19" type="revolute">
+        <origin xyz="-2.710913105221029e-34 0.0 0.010996770000000015" rpy="-6.162975822039155e-33 -2.6317740138327936e-81 -4.2702974826242526e-49" />
+        <parent link="l2_51105_bearing" />
+        <child link="l2_top" />
+        <axis xyz="-0.0 0.0 1.0" />
+        <limit lower="0.0" upper="3.141593" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="l2_top_Rigido-20" type="fixed">
+        <origin xyz="0.09 -0.024000000000000004 0.005999999999999997" rpy="3.141592653589793 -0.0 -5.503376651748532e-48" />
+        <parent link="l2_top" />
+        <child link="l2_bottom" />
+    </joint>
+    <joint name="l1_platform_bottom_Rigido-21" type="fixed">
+        <origin xyz="-0.0455 0.0405 0.0" rpy="-3.141592653589793 -0.0 -3.575378658000282e-49" />
+        <parent link="l1_platform_bottom" />
+        <child link="l2_stepper" />
+    </joint>
+    <joint name="anti_wobble_Rigido-22" type="fixed">
+        <origin xyz="-0.03 -0.021499999999999995 0.01" rpy="3.141592653589793 8.930854384075464e-79 9.056962336419341e-48" />
+        <parent link="anti_wobble" />
+        <child link="608_bearing" />
+    </joint>
+    <joint name="l2_top_Rigido-23" type="fixed">
+        <origin xyz="0.0325 -0.015499999999999998 0.0" rpy="3.141592653589793 -0.0 -5.503376651748532e-48" />
+        <parent link="l2_top" />
+        <child link="l3_stepper" />
+    </joint>
+    <joint name="l2_bottom_Rigido-24" type="fixed">
+        <origin xyz="0.03 -0.024000000000000004 -0.030999999999999996" rpy="0.0 -2.4781487288111424e-80 4.0210262061213034e-48" />
+        <parent link="l2_bottom" />
+        <child link="l3_51105_bearing" />
+    </joint>
+    <joint name="l3_51105_bearing_Rivoluzione-25" type="revolute">
+        <origin xyz="0.0 0.0 -0.010996760000000006" rpy="6.162975822039155e-33 -6.162975822039155e-33 -1.2228926112447996e-33" />
+        <parent link="l3_51105_bearing" />
+        <child link="l3_top" />
+        <axis xyz="-6.162975822039155e-33 -0.0 -1.0" />
+        <limit lower="-1.22173" upper="4.712389" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="l3_top_Rigido-26" type="fixed">
+        <origin xyz="-0.09 -0.024000000000000004 -0.005999999999999997" rpy="-6.117533459552187e-64 6.162975822039155e-33 1.2228926112447658e-33" />
+        <parent link="l3_top" />
+        <child link="l3_bottom" />
+    </joint>
+    <joint name="l3_bottom_Rigido-27" type="fixed">
+        <origin xyz="-0.03 0.024000000000000004 -0.030999999999999996" rpy="3.141592653589793 -0.0 -6.310936878636713e-46" />
+        <parent link="l3_bottom" />
+        <child link="ee_51105_bearing" />
+    </joint>
+    <joint name="ee_51105_bearing_Rivoluzione-28" type="revolute">
+        <origin xyz="-1.084365242088408e-33 0.0 0.010996769999999998" rpy="2.465190328815662e-32 -6.162975822039155e-33 -1.2228926112448176e-33" />
+        <parent link="ee_51105_bearing" />
+        <child link="ee_mount" />
+        <axis xyz="6.162975822039155e-33 2.465190328815662e-32 1.0" />
+        <limit lower="0.0" upper="5.585054" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="l3_bottom_Rigido-29" type="fixed">
+        <origin xyz="0.016500000000000004 0.008499999999999997 -0.031999999999999994" rpy="3.141592653589793 -0.0 -6.310936878636713e-46" />
+        <parent link="l3_bottom" />
+        <child link="ee_stepper" />
+    </joint>
+</robot>
