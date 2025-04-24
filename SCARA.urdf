@@ -513,130 +513,130 @@
             </geometry>
         </collision>
     </link>
-        <joint name="z_axis_mount_Scorrimento-31" type="prismatic">
+        <joint name="z_axis_mount_l1_platform_bottom" type="prismatic">
         <origin xyz="0.003999999999999999 0.013499999999999996 -0.046" rpy="3.141592653589793 -0.0 0.0" />
         <parent link="z_axis_mount" />
         <child link="l1_platform_bottom" />
         <axis xyz="0.0 0.0 1.0" />
-        <limit lower="0.0" upper="0.18" effort="1000000" velocity="1000000" />
+        <limit lower="0.0" upper="0.18" effort="1000" velocity="1000000" />
     </joint>
-    <joint name="base_Rigido-3" type="fixed">
+    <joint name="base_z_axis_mount" type="fixed">
         <origin xyz="0.026000000000000002 -0.0275 0.111" rpy="3.141592653589793 -0.0 0.0" />
         <parent link="base" />
         <child link="z_axis_mount" />
     </joint>
-    <joint name="z_axis_mount_Rigido-4" type="fixed">
+    <joint name="z_axis_mount_l1_stepper" type="fixed">
         <origin xyz="-0.0105 0.0075 0.0" rpy="0.0 -0.0 0.0" />
         <parent link="z_axis_mount" />
         <child link="l1_stepper" />
     </joint>
-    <joint name="coupler_Rigido-5" type="fixed">
+    <joint name="coupler_leadscrew" type="fixed">
         <origin xyz="0.0 0.0 0.015399999999999992" rpy="-1.232595164407831e-32 2.465190328815662e-32 2.1271369958606197e-63" />
         <parent link="coupler" />
         <child link="leadscrew" />
     </joint>
-    <joint name="z_axis_mount_Rigido-7" type="fixed">
+    <joint name="z_axis_mount_linear_rod_1" type="fixed">
         <origin xyz="-0.055999999999999994 0.013499999999999996 -0.03" rpy="0.0 -0.0 0.0" />
         <parent link="z_axis_mount" />
         <child link="linear_rod_1" />
     </joint>
-    <joint name="z_axis_mount_Rigido-8" type="fixed">
+    <joint name="z_axis_mount_linear_rod_2" type="fixed">
         <origin xyz="-0.055999999999999994 -0.06849999999999999 -0.03" rpy="0.0 -0.0 0.0" />
         <parent link="z_axis_mount" />
         <child link="linear_rod_2" />
     </joint>
-    <joint name="z_axis_mount_Rigido-9" type="fixed">
+    <joint name="z_axis_mount_linear_rod_3" type="fixed">
         <origin xyz="0.003999999999999999 -0.06849999999999999 -0.03" rpy="0.0 -0.0 0.0" />
         <parent link="z_axis_mount" />
         <child link="linear_rod_3" />
     </joint>
-    <joint name="z_axis_mount_Rigido-10" type="fixed">
+    <joint name="z_axis_mount_linear_rod_4" type="fixed">
         <origin xyz="0.003999999999999999 0.013499999999999996 -0.03" rpy="0.0 -0.0 0.0" />
         <parent link="z_axis_mount" />
         <child link="linear_rod_4" />
     </joint>
-    <joint name="l1_platform_bottom_Rigido-11" type="fixed">
+    <joint name="l1_platform_bottom_l1_T8_nut" type="fixed">
         <origin xyz="-0.038 0.021499999999999995 0.006000000000000014" rpy="-3.141592653589793 -0.0 -3.575378658000282e-49" />
         <parent link="l1_platform_bottom" />
         <child link="l1_T8_nut" />
     </joint>
-    <joint name="l1_stepper_Rigido-13" type="fixed">
+    <joint name="l1_stepper_coupler" type="fixed">
         <origin xyz="-0.015494 -0.015494 -0.024000000000000004" rpy="-3.141592653589793 -0.0 1.298208104246751e-67" />
         <parent link="l1_stepper" />
         <child link="coupler" />
     </joint>
-    <joint name="l1_platform_bottom_Rigido-14" type="fixed">
+    <joint name="l1_platform_bottom_l1_platform_top" type="fixed">
         <origin xyz="-0.061 0.020999999999999998 0.02400000000000002" rpy="6.162975822039155e-33 -0.0 -3.575378658000282e-49" />
         <parent link="l1_platform_bottom" />
         <child link="l1_platform_top" />
     </joint>
-    <joint name="linear_rod_4_Rigido-15" type="fixed">
+    <joint name="linear_rod_4_anti_wobble" type="fixed">
         <origin xyz="0.0 0.0 -0.3" rpy="9.860761315262648e-32 -0.0 0.0" />
         <parent link="linear_rod_4" />
         <child link="anti_wobble" />
     </joint>
-    <joint name="l1_platform_bottom_Rigido-17" type="fixed">
+    <joint name="l1_platform_bottom_l2_51105_bearing" type="fixed">
         <origin xyz="-0.03 -0.03900000000000001 0.0010000000000000143" rpy="-3.141592653589793 -0.0 -3.575378658000282e-49" />
         <parent link="l1_platform_bottom" />
         <child link="l2_51105_bearing" />
     </joint>
-    <joint name="l2_51105_bearing_Rivoluzione-19" type="revolute">
+    <joint name="l2_51105_bearing_l2_top" type="revolute">
         <origin xyz="-2.710913105221029e-34 0.0 0.010996770000000015" rpy="-6.162975822039155e-33 -2.6317740138327936e-81 -4.2702974826242526e-49" />
         <parent link="l2_51105_bearing" />
         <child link="l2_top" />
         <axis xyz="-0.0 0.0 1.0" />
-        <limit lower="0.0" upper="3.141593" effort="1000000" velocity="1000000" />
+        <limit lower="0.0" upper="3.141593" effort="1000" velocity="1000000" />
     </joint>
-    <joint name="l2_top_Rigido-20" type="fixed">
+    <joint name="l2_top_l2_bottom" type="fixed">
         <origin xyz="0.09 -0.024000000000000004 0.005999999999999997" rpy="3.141592653589793 -0.0 -5.503376651748532e-48" />
         <parent link="l2_top" />
         <child link="l2_bottom" />
     </joint>
-    <joint name="l1_platform_bottom_Rigido-21" type="fixed">
+    <joint name="l1_platform_bottom_l2_stepper" type="fixed">
         <origin xyz="-0.0455 0.0405 0.0" rpy="-3.141592653589793 -0.0 -3.575378658000282e-49" />
         <parent link="l1_platform_bottom" />
         <child link="l2_stepper" />
     </joint>
-    <joint name="anti_wobble_Rigido-22" type="fixed">
+    <joint name="anti_wobble_608_bearing" type="fixed">
         <origin xyz="-0.03 -0.021499999999999995 0.01" rpy="3.141592653589793 8.930854384075464e-79 9.056962336419341e-48" />
         <parent link="anti_wobble" />
         <child link="608_bearing" />
     </joint>
-    <joint name="l2_top_Rigido-23" type="fixed">
+    <joint name="l2_top_l3_stepper" type="fixed">
         <origin xyz="0.0325 -0.015499999999999998 0.0" rpy="3.141592653589793 -0.0 -5.503376651748532e-48" />
         <parent link="l2_top" />
         <child link="l3_stepper" />
     </joint>
-    <joint name="l2_bottom_Rigido-24" type="fixed">
+    <joint name="l2_bottom_l3_51105_bearing" type="fixed">
         <origin xyz="0.03 -0.024000000000000004 -0.030999999999999996" rpy="0.0 -2.4781487288111424e-80 4.0210262061213034e-48" />
         <parent link="l2_bottom" />
         <child link="l3_51105_bearing" />
     </joint>
-    <joint name="l3_51105_bearing_Rivoluzione-25" type="revolute">
+    <joint name="l3_51105_bearing_l3_top" type="revolute">
         <origin xyz="0.0 0.0 -0.010996760000000006" rpy="6.162975822039155e-33 -6.162975822039155e-33 -1.2228926112447996e-33" />
         <parent link="l3_51105_bearing" />
         <child link="l3_top" />
         <axis xyz="-6.162975822039155e-33 -0.0 -1.0" />
-        <limit lower="-1.22173" upper="4.712389" effort="1000000" velocity="1000000" />
+        <limit lower="-1.22173" upper="4.712389" effort="1000" velocity="1000000" />
     </joint>
-    <joint name="l3_top_Rigido-26" type="fixed">
+    <joint name="l3_top_l3_bottom" type="fixed">
         <origin xyz="-0.09 -0.024000000000000004 -0.005999999999999997" rpy="-6.117533459552187e-64 6.162975822039155e-33 1.2228926112447658e-33" />
         <parent link="l3_top" />
         <child link="l3_bottom" />
     </joint>
-    <joint name="l3_bottom_Rigido-27" type="fixed">
+    <joint name="l3_bottom_ee_51105_bearing" type="fixed">
         <origin xyz="-0.03 0.024000000000000004 -0.030999999999999996" rpy="3.141592653589793 -0.0 -6.310936878636713e-46" />
         <parent link="l3_bottom" />
         <child link="ee_51105_bearing" />
     </joint>
-    <joint name="ee_51105_bearing_Rivoluzione-28" type="revolute">
+    <joint name="ee_51105_bearing_ee_mount" type="revolute">
         <origin xyz="-1.084365242088408e-33 0.0 0.010996769999999998" rpy="2.465190328815662e-32 -6.162975822039155e-33 -1.2228926112448176e-33" />
         <parent link="ee_51105_bearing" />
         <child link="ee_mount" />
         <axis xyz="6.162975822039155e-33 2.465190328815662e-32 1.0" />
-        <limit lower="0.0" upper="5.585054" effort="1000000" velocity="1000000" />
+        <limit lower="0.0" upper="5.585054" effort="1000" velocity="1000000" />
     </joint>
-    <joint name="l3_bottom_Rigido-29" type="fixed">
+    <joint name="l3_bottom_ee_stepper" type="fixed">
         <origin xyz="0.016500000000000004 0.008499999999999997 -0.031999999999999994" rpy="3.141592653589793 -0.0 -6.310936878636713e-46" />
         <parent link="l3_bottom" />
         <child link="ee_stepper" />
