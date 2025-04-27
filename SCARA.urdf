@@ -617,7 +617,7 @@
         <parent link="l3_51105_bearing" />
         <child link="l3_top" />
         <axis xyz="-6.162975822039155e-33 -0.0 -1.0" />
-        <limit lower="-3.141593" upper="3.141593" effort="1000" velocity="1000000" />
+        <limit lower="-6.28318" upper="0" effort="1000" velocity="1000000" />
     </joint>
     <joint name="l3_top_l3_bottom" type="fixed">
         <origin xyz="-0.09 -0.024000000000000004 -0.005999999999999997" rpy="-6.117533459552187e-64 6.162975822039155e-33 1.2228926112447658e-33" />
