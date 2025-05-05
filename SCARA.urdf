@@ -513,7 +513,87 @@
             </geometry>
         </collision>
     </link>
-        <joint name="z_axis_mount_l1_platform_bottom" type="prismatic">
+        <link name="gripper_mount">
+        <inertial>
+            <origin xyz="0.02429474690635678 -0.007511397511084983 -0.003999997920274025" rpy="0.0 -0.0 0.0" />
+            <mass value="0.12491021556465158" />
+            <inertia ixx="2.9748154628836442e-05" iyy="6.597747632061835e-05" izz="4.445403328033051e-05" ixy="1.6694056488276907e-07" iyz="9.757954346012359e-19" ixz="5.581614624233401e-19" />
+        </inertial>
+        <visual name="gripper_mount_visual">
+            <origin xyz="0.02450000000000499 1.2612133559741778e-15 0.1960000020797259" rpy="1.5707963267948968 1.8039512697644389e-16 1.201360325642012e-15" />
+            <geometry>
+                <mesh filename="CAD/gripper_mount.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        <material name="black"/>
+        </visual>
+        <collision name="gripper_mount_collision">
+            <origin xyz="0.02450000000000499 1.2612133559741778e-15 0.1960000020797259" rpy="1.5707963267948968 1.8039512697644389e-16 1.201360325642012e-15" />
+            <geometry>
+                <mesh filename="CAD/gripper_mount.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="gripper_adapter">
+        <inertial>
+            <origin xyz="-0.012125833843341071 0.012358548402677956 -0.020054899301118895" rpy="0.0 -0.0 0.0" />
+            <mass value="0.259073281997157" />
+            <inertia ixx="5.322607482823884e-05" iyy="9.169121355021999e-05" izz="7.787021688783068e-05" ixy="6.002227747556695e-06" iyz="-2.9612357331563577e-06" ixz="-3.2609595449759763e-06" />
+        </inertial>
+        <visual name="gripper_adapter_visual">
+            <origin xyz="-0.015999999999995063 -0.005999999999998717 -0.21899999792027397" rpy="-1.5707963267948968 -5.79304470617085e-17 -3.141592653589792" />
+            <geometry>
+                <mesh filename="CAD/gripper_adapter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        <material name="black"/>
+        </visual>
+        <collision name="gripper_adapter_collision">
+            <origin xyz="-0.015999999999995063 -0.005999999999998717 -0.21899999792027397" rpy="-1.5707963267948968 -5.79304470617085e-17 -3.141592653589792" />
+            <geometry>
+                <mesh filename="CAD/gripper_adapter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="gripper_rack_left">
+        <inertial>
+            <origin xyz="-0.012115388628615404 -0.01606012304339121 -0.014260700839821951" rpy="-6.502546221635091e-79 -0.0 0.0" />
+            <mass value="0.09055057737962392" />
+            <inertia ixx="2.401359918239817e-05" iyy="2.5986369294996667e-05" izz="1.7415334751534003e-05" ixy="-4.6797648528142185e-06" iyz="6.06586332176832e-06" ixz="4.926407667302212e-06" />
+        </inertial>
+        <visual name="gripper_rack_left_visual">
+            <origin xyz="-0.007509997920274181 -0.1299999999999987 -0.026500000000005183" rpy="-3.141592653589793 1.5707963267948948 0" />
+            <geometry>
+                <mesh filename="CAD/gripper_rack.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        <material name="black"/>
+        </visual>
+        <collision name="gripper_rack_left_collision">
+            <origin xyz="-0.007509997920274181 -0.1299999999999987 -0.026500000000005183" rpy="-3.141592653589793 1.5707963267948948 0" />
+            <geometry>
+                <mesh filename="CAD/gripper_rack.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="gripper_rack_right">
+        <inertial>
+            <origin xyz="0.012115392788067112 0.016060123043391154 -0.01426070083981202" rpy="0.0 -0.0 0.0" />
+            <mass value="0.09055057737962392" />
+            <inertia ixx="2.4013599182397954e-05" iyy="2.5986369294996708e-05" izz="1.7415334751534443e-05" ixy="-4.679764852814195e-06" iyz="-6.065863321768326e-06" ixz="-4.926407667302205e-06" />
+        </inertial>
+        <visual name="gripper_rack_right_visual">
+            <origin xyz="0.007510002079725835 0.12999999999999867 -0.026499999999995055" rpy="-3.107644123200866e-16 1.5707963267948963 0" />
+            <geometry>
+                <mesh filename="CAD/gripper_rack.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        <material name="black"/>
+        </visual>
+        <collision name="gripper_rack_collision">
+            <origin xyz="0.007510002079725835 0.12999999999999867 -0.026499999999995055" rpy="-3.107644123200866e-16 1.5707963267948963 0" />
+            <geometry>
+                <mesh filename="CAD/gripper_rack.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="z_axis_mount_l1_platform_bottom" type="prismatic">
         <origin xyz="0.003999999999999999 0.013499999999999996 -0.046" rpy="3.141592653589793 -0.0 0.0" />
         <parent link="z_axis_mount" />
         <child link="l1_platform_bottom" />
@@ -634,11 +714,31 @@
         <parent link="ee_51105_bearing" />
         <child link="ee_mount" />
         <axis xyz="6.162975822039155e-33 2.465190328815662e-32 1.0" />
-        <limit lower="-3.141593" upper="3.141593" effort="1000" velocity="1000000" />
+        <limit lower="0" upper="3.141593" effort="1000" velocity="1000000" />
     </joint>
     <joint name="l3_bottom_ee_stepper" type="fixed">
         <origin xyz="0.016500000000000004 0.008499999999999997 -0.031999999999999994" rpy="3.141592653589793 -0.0 -6.310936878636713e-46" />
         <parent link="l3_bottom" />
         <child link="ee_stepper" />
+    </joint>
+        <joint name="ee_mount_gripper_adapter" type="fixed">
+        <origin xyz="0.016 0.0 0.006000000000000005" rpy="3.141592653589793 6.162975822039155e-33 1.2228926112441607e-33" />
+        <parent link="ee_mount" />
+        <child link="gripper_adapter" />
+    </joint>
+    <joint name="gripper_adapter_gripper_mount" type="fixed">
+        <origin xyz="-0.04050000000000001 -0.005999999999999997 -0.014999999999999996" rpy="9.888225988704661e-33 1.0364333334546883e-47 -1.3489594288050942e-48" />
+        <parent link="gripper_adapter" />
+        <child link="gripper_mount" />
+    </joint>
+    <joint name="gripper_mount_gripper_rack_left" type="fixed">
+        <origin xyz="-0.0019999999999999974 -0.012800000000000011 0.013000000000000003" rpy="6.703233356227362e-16 -1.5707963267948966 0" />
+        <parent link="gripper_mount" />
+        <child link="gripper_rack_left" />
+    </joint>
+    <joint name="gripper_mount_gripper_rack_right" type="fixed">
+        <origin xyz="0.051000000000000004 -0.012800000000000011 -0.021" rpy="-3.141592653589793 -1.5707963267948966 0" />
+        <parent link="gripper_mount" />
+        <child link="gripper_rack_right" />
     </joint>
 </robot>
